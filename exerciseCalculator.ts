@@ -8,12 +8,12 @@ type Result = {
   average: number;
 };
 
-const target = Number(process.argv[2]);
-if (isNaN(target)) throw new Error('Invalid argument');
-const exerciseHours = process.argv.slice(3).map((e) => {
-  if (isNaN(Number(e))) throw new Error('Invalid argument');
-  return Number(e);
-});
+// const target = Number(process.argv[2]);
+// if (isNaN(target)) throw new Error('Invalid argument');
+// const exerciseHours = process.argv.slice(3).map((e) => {
+//   if (isNaN(Number(e))) throw new Error('Invalid argument');
+//   return Number(e);
+// });
 
 const calculateExercises = (
   target: number,
@@ -32,4 +32,6 @@ const calculateExercises = (
   };
 };
 
-console.log(calculateExercises(target, exerciseHours));
+// console.log(calculateExercises(target, exerciseHours));
+
+export default calculateExercises;
