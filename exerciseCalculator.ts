@@ -8,9 +8,16 @@ type Result = {
   average: number;
 };
 
+const target = Number(process.argv[2]);
+if (isNaN(target)) throw new Error('Invalid argument');
+const exerciseHours = process.argv.slice(3).map((e) => {
+  if (isNaN(Number(e))) throw new Error('Invalid argument');
+  return Number(e);
+});
+
 const calculateExercises = (
-  exerciseHours: number[],
-  target: number
+  target: number,
+  exerciseHours: number[]
 ): Result => {
   const average =
     exerciseHours.reduce((prev, curr) => prev + curr, 0) / exerciseHours.length;
@@ -24,3 +31,5 @@ const calculateExercises = (
     average,
   };
 };
+
+console.log(calculateExercises(target, exerciseHours));
