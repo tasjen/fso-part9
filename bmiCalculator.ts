@@ -1,7 +1,7 @@
-const height = Number(process.argv[2]);
-const weight = Number(process.argv[3]);
+// const height = Number(process.argv[2]);
+// const weight = Number(process.argv[3]);
 
-if (isNaN(height + weight)) throw new Error('Invalid argument');
+// if (isNaN(height + weight)) throw new Error('Invalid argument');
 
 const calculateBmi = (height: number, weight: number) => {
   const bmi = Math.round((weight / (height / 100) ** 2) * 10) / 10;
@@ -22,4 +22,6 @@ const calculateBmi = (height: number, weight: number) => {
     : 'Obese (Class III)';
 };
 
-console.log(calculateBmi(height, weight));
+// console.log(calculateBmi(height, weight));
+
+export default calculateBmi;
