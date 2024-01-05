@@ -6,6 +6,7 @@ app.get('/hello', (_req, res) => {
   res.send('Hello Full Stack!');
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 app.get('/bmi', (req, res): any => {
   const height = Number(req.query.height);
   const weight = Number(req.query.weight);
