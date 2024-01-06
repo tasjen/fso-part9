@@ -1,8 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import diagnosisService from './services/diagnosisService';
-import patientService from './services/patientService';
-
+import diagnosisRouter from './routes/diagnoses';
+import patientRouter from './routes/patients';
 
 const app = express();
 
@@ -16,13 +15,8 @@ app.get('/api/ping', (_req, res) => {
   res.send('pong');
 });
 
-app.get('/api/diagnoses', (_req, res) => {
-  res.json(diagnosisService.getDiagnoses());
-});
-
-app.get('/api/patients', (_req, res) => {
-  res.json(patientService.getNonSensitivePatients());
-});
+app.use('/api/diagnoses', diagnosisRouter);
+app.use('/api/patients', patientRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
