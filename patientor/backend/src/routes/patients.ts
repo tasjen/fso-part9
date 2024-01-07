@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
     const newPatient = toNewPatient(req.body);
     const addedPatient = patientService.addPatient(newPatient);
     res.json(addedPatient);
-  } catch (err) {
+  } catch (err: unknown) {
     if (err instanceof Error) {
       res.status(400).send(`Something went wrong. Error: ${err.message}`);
     }

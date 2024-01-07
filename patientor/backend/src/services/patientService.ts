@@ -20,5 +20,5 @@ const addPatient = (object: NewPatient): Patient => {
 export default {
   getPatients,
   getNonSensitivePatients,
-  addPatient
+  addPatient,
 };
